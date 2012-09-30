@@ -1,0 +1,247 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+<class     name="com.snp.site.model.SiteUser"     table="site_user">
+    <id name="id" type="java.lang.Long" column="id" >  <generator class="native" /> </id>
+    <property name="password"  type="java.lang.String" column="password"  length="50" > </property>
+    <property name="username" type="java.lang.String" column="username" length="50" >  </property>
+    <property name="usernotify" type="java.lang.String" column="usernotify" length="535"></property>
+    <property name="paymoney" type="java.lang.String" column="paymoney" length="30" ></property>
+    <property name="price" type="java.lang.String" column="price" length="30" ></property>
+    <property name="state" type="java.lang.String" column="state" length="30"  > </property>
+    <property name="enddate" type="java.sql.Date" column="enddate"  length="10" > </property>
+    <property name="begindate" type="java.sql.Date"  column="begindate" length="10"  >   </property>
+    <property name="urlkey" type="java.lang.String"  column="urlkey" length="40"  >   </property>
+    <property name="otherusername" type="java.lang.String" column="otherusername" length="150" > </property>
+	
+	<property name="title" type="java.lang.String" column="title" length="300" > </property>
+    <property name="title2" type="java.lang.String" column="title2" length="50" ></property>
+    <property name="title3"  type="java.lang.String"  column="title3" length="50" >   </property>	
+    
+    <property name="contentright" type="java.lang.String" column="contentright" length="1000" > </property>
+    <property name="contentleft"  type="java.lang.String" column="contentleft" length="1000" > </property>
+    <property name="checkDesc" type="java.lang.String" column="checkDesc" length="1000" > </property>
+    <property name="guestDesc" type="java.lang.String" column="guestDesc" length="300" > </property>  
+	<property name="aboutht" type="java.lang.String" column="aboutht" length="500" > </property>
+    <property name="addressht" type="java.lang.String" column="addressht" length="500" > </property>     
+    <property name="jobht" type="java.lang.String" column="jobht" length="500" > </property>
+    <property name="s1ht" type="java.lang.String" column="s1ht" length="500" > </property>
+    <property name="s2ht" type="java.lang.String" column="s2ht" length="500" > </property>
+   
+   <property name="marquee" type="java.lang.String" column="marquee" length="300" > </property>
+    <property name="marquee2" type="java.lang.String" column="marquee2" length="300" ></property>
+    <property name="marquee3"  type="java.lang.String"  column="marquee3" length="300" >   </property>	
+	 
+	<property name="bottom" type="java.lang.String"  column="bottom" length="1000"  > </property>
+	
+	
+    <property name="language"  type="java.lang.String" column="language" length="20"  > </property>
+    <property name="language2" type="java.lang.String" column="language2"  length="20"  > </property>
+    <property name="language3"  type="java.lang.String" column="language3" length="20" > </property>
+    <property name="local" type="java.lang.String" column="local"  length="20" > </property>
+    <property name="local2" type="java.lang.String" column="local2" length="20"  > </property>
+    <property name="local3" type="java.lang.String" column="local3" length="20" > </property>
+    <property name="shopcartflag" type="java.lang.String" column="shopcartflag" length="10"   > </property>
+
+    <property name="envelopStyle" type="java.lang.String" column="envelop_style" length="20"   > </property>
+
+     <property name="indexStyle" type="java.lang.String"  column="index_style" length="20"  >  </property>
+    <property name="cssStyle" type="java.lang.String"  column="css_style" length="10"  >  </property>
+    <property name="dirStyle" type="java.lang.String"  column="dir_style" length="10"  >  </property>
+	<property name="cssdefineself" type="java.lang.String"  column="cssdefineself" length="10">  </property>
+    <property name="indexContentStyle" type="java.lang.String"  column="index_content_style" length="20"  >  </property>
+    <property name="ordernum" type="java.lang.Integer" column="ordernum" length="11" > </property>
+    <property name="comment" type="java.lang.String" column="comment" length="65535" > </property>		
+
+    <property name="checkEmail" type="java.lang.String"  column="checkemail"  length="200"  > </property>	
+    <property name="guestEmail" type="java.lang.String" column="guestemail"  length="200" > </property>					
+   <property name="fileEmail" type="java.lang.String" column="fileemail"  length="200" > </property>					
+	   
+	
+    <property name="indexProductRownum"  type="java.lang.String"  column="index_product_rownum" length="20" > </property>
+    <property name="indexProductColnum" type="java.lang.String"  column="index_product_colnum" length="20" >  </property>
+    <property name="indexLimit" type="java.lang.String" column="index_limit" length="50" > </property>
+    <property name="indexLanmu"  type="java.lang.String" column="index_lanmu"  length="50"   > </property>
+    <property name="indexLanmu2" type="java.lang.String" column="index_lanmu2" length="50" > </property>
+    <property name="indexLanmu3" type="java.lang.String" column="index_lanmu3"   length="50" > </property>
+    <property name="indexDesc"  type="java.lang.String"  column="index_desc"  length="500" > </property>
+    <property name="indexDesc2"  type="java.lang.String"  column="index_desc2"  length="500" > </property>
+    <property name="indexDesc3"  type="java.lang.String"  column="index_desc3"  length="500" > </property>
+
+    <property name="jobLanmu" type="java.lang.String" column="job_lanmu" length="50" ></property>
+    <property name="jobLanmu2" type="java.lang.String" column="job_lanmu2" length="50"></property>
+    <property name="jobLanmu3" type="java.lang.String" column="job_lanmu3" length="50"> </property>
+    <property name="jobLimit" type="java.lang.String" column="job_limit" length="50"></property>
+   
+    <property name="addressLanmu"  type="java.lang.String" column="address_lanmu" length="50" ></property>	
+    <property name="addressLanmu2" type="java.lang.String"   column="address_lanmu2"  length="50"  ></property>
+    <property name="addressLanmu3" type="java.lang.String" column="address_lanmu3" length="50" ></property>			
+    <property name="addressLimit" type="java.lang.String" column="address_limit" length="50"  ></property>
+   
+	<property name="s1Lanmu" type="java.lang.String"  column="s1_lanmu" length="50"  > </property>
+    <property name="s1Lanmu2" type="java.lang.String" column="s1_lanmu2" length="50" > </property>
+    <property name="s1Lanmu3" type="java.lang.String" column="s1_lanmu3"  length="50" > </property>	
+
+    <property name="guestLanmu" type="java.lang.String"  column="guest_lanmu" length="50"  >  </property>
+    <property name="guestLanmu2" type="java.lang.String" column="guest_lanmu2" length="50" > </property>
+    <property name="guestLanmu3" type="java.lang.String"  column="guest_lanmu3"  length="50"  ></property>	
+    <property name="guestLimit" type="java.lang.String"  column="guest_limit" length="50" >  </property>
+    
+	<property name="linkLanmu"  type="java.lang.String" column="link_lanmu" length="50" > </property>
+    <property name="linkLanmu2" type="java.lang.String" column="link_lanmu2" length="50" ></property>
+    <property name="linkLanmu3" type="java.lang.String" column="link_lanmu3" length="50" ></property>
+    <property name="linkLimit"  type="java.lang.String"  column="link_limit" length="50" > </property>
+   
+	<property name="checkLanmu" type="java.lang.String" column="check_lanmu"  length="50"  > </property>
+    <property name="checkLanmu2" type="java.lang.String" column="check_lanmu2" length="50"  > </property>
+    <property name="checkLanmu3" type="java.lang.String"  column="check_lanmu3"  length="50"  > </property>
+    <property name="checkLimit" type="java.lang.String" column="checkLimit"  length="50"  > </property>
+	
+    <property name="checkdesignLanmu"  type="java.lang.String"   column="checkdesign_lanmu"  length="50" > </property>
+    <property name="checkdesignDesc"  type="java.lang.String"  column="checkdesign_desc" length="50"> </property>
+   
+	<property name="spmp1Lanmu" type="java.lang.String"  column="spmp1_lanmu" length="50"  > </property>
+    <property name="spmp1Lanmu2" type="java.lang.String" column="spmp1_lanmu2" length="50" > </property>
+    <property name="spmp1Lanmu3" type="java.lang.String" column="spmp1_lanmu3"  length="50" > </property>	
+    <property name="spmp1Limit"   type="java.lang.String" column="spmp1_limit" length="50" > </property>
+    
+	<property name="spmp2Lanmu" type="java.lang.String"  column="spmp2_lanmu" length="50" > </property>
+    <property name="spmp2Lanmu2" type="java.lang.String"  column="spmp2_lanmu2" length="50"  > </property>
+    <property name="spmp2Lanmu3" type="java.lang.String" column="spmp2_lanmu3"  length="50"  > </property>
+    <property name="spmp2Limit" type="java.lang.String" column="spmp2_limit" length="50" >  </property>
+    
+	<property name="spmp3Lanmu" type="java.lang.String"  column="spmp3_lanmu"  length="50" > </property>
+    <property name="spmp3Lanmu2" type="java.lang.String"  column="spmp3_lanmu2"  length="50" >  </property>
+    <property name="spmp3Lanmu3" type="java.lang.String" column="spmp3_lanmu3" length="50" > </property>
+    <property name="spmp3Limit"  type="java.lang.String" column="spmp3_limit" length="50"  > </property>
+    
+	<property name="spmp4Lanmu" type="java.lang.String" column="spmp4_lanmu"  length="50"  > </property>
+    <property name="spmp4Lanmu2" type="java.lang.String"  column="spmp4_lanmu2"  length="50" > </property>
+    <property name="spmp4Lanmu3" type="java.lang.String"   column="spmp4_lanmu3"     length="50" > </property>
+    <property name="spmp4Limit"   type="java.lang.String" column="spmp4_limit"  length="50"  > </property>
+    <property name="spmp4ItemDetailStyle" type="java.lang.String"  column="spmp4item_detail_style" length="20"  >  </property>
+
+    <property name="spmp4common"  type="java.lang.String"  column="spmp4common"  length="500" > </property>
+    <property name="spmp4common2"  type="java.lang.String"  column="spmp4common2"  length="500" > </property>
+    <property name="spmp4common3"  type="java.lang.String"  column="spmp4common3"  length="500" > </property>
+
+	
+	<property name="spmp5Lanmu" type="java.lang.String" column="spmp5_lanmu"  length="50" >  </property>
+    <property name="spmp5Lanmu2" type="java.lang.String" column="spmp5_lanmu2" length="50" > </property>
+    <property name="spmp5Lanmu3" type="java.lang.String" column="spmp5_lanmu3" length="50" > </property>
+    <property name="spmp5Limit" type="java.lang.String"  column="spmp5_limit"  length="50"  > </property>
+    
+  
+	<property name="spmp6Lanmu" type="java.lang.String"  column="spmp6_lanmu" length="50"  > </property>
+    <property name="spmp6Lanmu2" type="java.lang.String" column="spmp6_lanmu2" length="50" > </property>
+    <property name="spmp6Lanmu3" type="java.lang.String" column="spmp6_lanmu3"  length="50" > </property>	
+    <property name="spmp6Limit"   type="java.lang.String" column="spmp6_limit" length="50" > </property>
+    
+    <property name="searchTitle"   type="java.lang.String" column="searchtitle"  length="100"  > </property>	
+    <property name="searchKeys"   type="java.lang.String" column="searchkeys"  length="100"  > </property>	
+    <property name="searchDesc"   type="java.lang.String" column="searchdesc"  length="300"  > </property>	
+    <property name="clientList" type="java.lang.String" column="clientlist" length="1000" > </property>			
+
+	<property name="spmp7Lanmu" type="java.lang.String"  column="spmp7_lanmu" length="50"  > </property>
+    <property name="spmp7Lanmu2" type="java.lang.String" column="spmp7_lanmu2" length="50" > </property>
+    <property name="spmp7Lanmu3" type="java.lang.String" column="spmp7_lanmu3"  length="50" > </property>	
+    <property name="spmp7Limit"   type="java.lang.String" column="spmp7_limit" length="50" > </property>
+    
+	<property name="spmp8Lanmu" type="java.lang.String" column="spmp8_lanmu"  length="50" >  </property>
+    <property name="spmp8Lanmu2" type="java.lang.String" column="spmp8_lanmu2" length="50" > </property>
+    <property name="spmp8Lanmu3" type="java.lang.String" column="spmp8_lanmu3" length="50" > </property>
+    <property name="spmp8Limit" type="java.lang.String"  column="spmp8_limit"  length="50"  > </property>
+	<property name="s2Lanmu" type="java.lang.String"  column="s2_lanmu" length="50"  > </property>
+    <property name="s2Lanmu2" type="java.lang.String" column="s2_lanmu2" length="50" > </property>
+    <property name="s2Lanmu3" type="java.lang.String" column="s2_lanmu3"  length="50" > </property>	
+   <property name="productlinkstring" type="java.lang.String" column="productlinkstring"  length="100" > </property>	
+
+		
+    <!-- Associations -->
+    <set name="siteOrderRadios"  lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key><column name="userid" /></key><one-to-many   class="com.snp.site.model.SiteOrderRadio" />
+    </set>
+    <set name="siteAbouts" lazy="true"  inverse="true" cascade="all-delete-orphan" order-by="sortstr">
+        <key><column name="userid" /></key><one-to-many  class="com.snp.site.model.SiteAbout"/>
+    </set>
+    <set  name="siteAddresss" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key><column name="userid" /></key><one-to-many  class="com.snp.site.model.SiteAddress"  />
+    </set>
+		
+    <set  name="siteLinks" lazy="true"  inverse="true" cascade="all-delete-orphan" order-by="sortstr"  >
+        <key>  <column name="userid" /> </key><one-to-many  class="com.snp.site.model.SiteLink"   />
+    </set>
+	<set name="siteJobs" lazy="true"  inverse="true" cascade="all-delete-orphan" order-by="sortstr"   >
+        <key> <column name="userid" /> </key><one-to-many    class="com.snp.site.model.SiteJob" />
+    </set>
+    <set  name="siteOrders" lazy="true" inverse="true" cascade="all-delete-orphan" >
+        <key> <column name="userid" /> </key><one-to-many  class="com.snp.site.model.SiteOrder" />
+    </set>
+    <set name="siteOrderInputs" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many  class="com.snp.site.model.SiteOrderInput" />
+    </set>
+    <set name="siteOrderChecks" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+          <key> <column name="userid" /> </key><one-to-many   class="com.snp.site.model.SiteOrderCheck"  />
+    </set>
+ 
+    <set name="siteEnvelopabouts" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+      <key>  <column name="userid" /> </key><one-to-many  class="com.snp.site.model.SiteEnvelopabout"  />
+    </set>
+    <set  name="siteGuests" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" />  </key><one-to-many  class="com.snp.site.model.SiteGuest" />
+    </set>
+
+
+
+    <set  name="siteSpmp1s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr"  >
+        <key> <column name="userid" /> </key> <one-to-many  class="com.snp.site.model.SiteSpmp1"   />
+    </set>
+
+    <set name="siteSpmp2s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many   class="com.snp.site.model.SiteSpmp2" />
+    </set>
+    <set name="siteSpmp3s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many  class="com.snp.site.model.SiteSpmp3"  />
+    </set>
+    <set  name="siteSpmp4s"  lazy="true"  inverse="true" cascade="all-delete-orphan" 	order-by="sortstr"   >
+        <key>  <column name="userid" /> </key><one-to-many  class="com.snp.site.model.SiteSpmp4" />
+    </set>	  
+    <set name="siteSpmp5s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many    class="com.snp.site.model.SiteSpmp5" />
+    </set>	
+    <set name="siteSpmp6s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many    class="com.snp.site.model.SiteSpmp6" />
+    </set>
+    <set name="siteSpmp7s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many    class="com.snp.site.model.SiteSpmp7" />
+    </set>	
+    <set name="siteSpmp8s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many    class="com.snp.site.model.SiteSpmp8" />
+    </set>	   
+	
+    <set name="siteSpmp9s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many    class="com.snp.site.model.SiteSpmp9" />
+    </set>		
+   		    
+    <set name="siteSusers" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key> <column name="userid" /> </key><one-to-many    class="com.snp.site.model.SiteSuser" />
+    </set>	
+    	
+    <set name="sitePresources" lazy="true"  inverse="true" cascade="all-delete-orphan" order-by="sortstr">
+        <key><column name="userid" /> </key><one-to-many  class="com.snp.site.model.SitePresource"  />
+    </set>	
+    <set  name="siteS1s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key><column name="userid" /></key><one-to-many  class="com.snp.site.model.SiteS1"  />
+    </set> 
+    <!--    --> 
+    <set  name="siteS2s" lazy="true" inverse="true" cascade="all-delete-orphan" order-by="sortstr" >
+        <key><column name="userid" /></key><one-to-many  class="com.snp.site.model.SiteS2"  />
+    </set>
+    
+    
+        			
+</class>
+	<query name="findalluser"><![CDATA[from SiteUser user]]></query>
+</hibernate-mapping>

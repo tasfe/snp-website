@@ -1,0 +1,26 @@
+@import "main0.css";
+#div-main                              {} /*栏目为空时，可以撑开*/        
+a                                      {color: #FFFAFA; text-decoration:none;}        
+a:hover                                {color: #F9D060;}  
+#snp-detail                            {color:#65747B;   } 
+#div-page                              {background: #c8e3f1;BACKGROUND-IMAGE: url(../../other/blue/bg_top.png); PADDING-TOP: 40px; BACKGROUND-REPEAT: repeat-x;}
+#div-content                           {background: #D4E6F4;}
+#div-top-link                          {background:url("../../other/black/t2.jpg") repeat-x;  }                                                          
+#div-title                             {background: #D4E6F4;}
+
+/*栏目颜色*/                                                            
+#top-lanmu                             {background:url("../../other/black/t.gif") repeat-x;line-height: 25px ; text-align: center; width:100%;  }
+#top-lanmu li                          {display: inline;  }
+#top-lanmu a                           {color:#fff;font-weight:bold; font-size:13px;  text-decoration:none;}
+#top-lanmu a span                      {padding:4px 6px 4px 6px;}
+#top-lanmu a:hover                     {color:#F9D060; }
+#top-lanmu a:hover  span               {} /*支持其他浏览器，不然移动过去显示的是很小的区域换色*/
+
+#div-dir                           {width: 190px;  float: left; padding: 0px 0px 0px 0px;  } 
+#snp-left-lanmutitle               {COLOR: #65747B; font-size:13px; font-weight:bold;padding: 1px 1px 0px 5px;  height:32px; line-height:32px;}
+#div-dir      a                    { COLOR: #65747B;   text-decoration:none;}    
+#div-dir     a:hover                 {color: #F9D060;font-weight:bold;}
+
+#bottom                                {background:url("../../other/blue/t2.png") repeat-x;height:100%;}
+.bottom_background                     {}
+

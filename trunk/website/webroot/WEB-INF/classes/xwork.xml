@@ -1,0 +1,103 @@
+<!DOCTYPE xwork PUBLIC "-//OpenSymphony Group//XWork 1.0//EN" 
+    "http://www.opensymphony.com/xwork/xwork-1.0.dtd">
+<xwork>
+  	<include file="webwork-default.xml"/>
+	<package name="default" extends="webwork-default">
+        <result-types>
+		    <result-type name="operationResult" class="com.sunrise.sup.core.webwork.result.OperationResult"/>
+		</result-types>
+		<interceptors>
+			<interceptor name="authenticatesite" class="com.snp.site.interceptor.AuthenticateInterceptorClient"/>
+			<interceptor-stack name="siteoperationRuleStack">
+				<interceptor-ref name="authenticatesite"/>
+				<interceptor-ref name="timer"/>
+				<interceptor-ref name="fileUpload"/>                
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack> 
+			<interceptor-stack name="resoperationRuleStack">
+				<interceptor-ref name="timer"/>
+				<interceptor-ref name="fileUpload"/>                
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack> 			
+		</interceptors>			
+		<global-results>
+			<result name="unauthenticated.user" type="redirect">/website/siteadmin/index.ftl</result>
+			<result name="operr_client"         type="dispatcher">/error/operr_client.ftl</result>
+			<result name="no"                   type="freemarker">/siteactionresultclient/no.ftl</result>
+		</global-results>  
+		<action name="sitelogin" class="com.snp.site.action.LoginAction">
+			<result name="sso"     type="freemarker">/website/siteadmin/sso.ftl</result>
+
+			<result name="success"     type="redirect">/website/siteadmin/frame.ftl</result>
+		    <result name="error"       type="freemarker">/website/siteadmin/login.ftl</result><!--已经选择语言的，所以应该是index2.ftl-->
+			<result name="systemerror" type="dispatcher">/error/operr_admin.ftl</result>
+		</action> 
+		<action name="siteoperationControl" class="operationControlAction">
+            <interceptor-ref name="siteoperationRuleStack"/>
+            <result name="success"    type="operationResult">index.ftl</result>
+		    <result name="loginError" type="freemarker">loginError.ftl</result>
+        </action> 
+		<action name="resoperationControl" class="operationControlAction">
+            <interceptor-ref name="resoperationRuleStack"/>
+            <result name="success"    type="operationResult">index.ftl</result>
+		    <result name="loginError" type="freemarker">loginError.ftl</result>
+        </action> 
+		<action name="siteadmin" class="com.snp.site.action.AdminAction">
+            <interceptor-ref name="siteoperationRuleStack"/>
+			<result name="error"               type="freemarker">/error/operr_admin.ftl</result>	
+		    <result name="operr_admin"         type="dispatcher">/error/operr_admin.ftl</result>
+			<result name="genclientpagesucess" type="freemarker">siteactionresultadmin/genclientpagesucess.ftl</result> 
+			<result name="ajax_result"         type="freemarker">siteactionresultadmin/ajax_result.ftl</result>  
+			<result name="password_error"      type="freemarker">sitedm/site_changepassword.ftl</result>  
+			<result name="password_changed"    type="freemarker">siteactionresultadmin/client_password_changed.ftl</result>  			
+            <result name="refreshUser"         type="freemarker">/website/siteadmin/tree.ftl</result>  
+		    <result name="get_spmp"            type="freemarker">/siteactionresultadmin/get_spmp.ftl</result>
+		    <result name="user"                type="freemarker">/siteactionresultadmin/user.ftl</result>   
+		    <result name="genreplace"          type="freemarker">/website/sitedm/globe_replace.ftl</result>  
+		</action>  
+	 	
+		<action name="site" class="com.snp.site.action.SiteClientAction">
+			<interceptor-ref name="fileUpload"/>
+			<result name="ajax_result"       type="freemarker">siteactionresultclient/ajax_result.ftl</result>  
+			<result name="chang_login_lang"  type="freemarker">/website/siteadmin/login.ftl</result>  
+            <result name="chang_admin_lang"  type="freemarker">/website/siteadmin/header.ftl</result>  
+			<result name="site_spmp1_detail" type="freemarker">/siteactionresultclient/site_spmp1_detail.ftl</result> 
+			<result name="site_spmp2_detail" type="freemarker">/siteactionresultclient/site_spmp2_detail.ftl</result> 
+			<result name="site_spmp3_detail" type="freemarker">/siteactionresultclient/site_spmp3_detail.ftl</result> 
+			<result name="site_spmp4move" 	 type="freemarker">/siteactionresultclient/site_spmp4move.ftl</result> 
+			<result name="site_spmp4byid" 	 type="freemarker">/siteactionresultclient/site_spmp4byid.ftl</result> 
+			<result name="site_spmp4_detail" type="freemarker">/siteactionresultclient/site_spmp4_detail.ftl</result> 
+			<result name="site_spmp4_export" type="freemarker">/siteactionresultclient/site_spmp4_export.ftl</result> 
+			<result name="site_spmp6_detail" type="freemarker">/siteactionresultclient/site_spmp6_detail.ftl</result> 
+			<result name="site_spmp7_detail" type="freemarker">/siteactionresultclient/site_spmp7_detail.ftl</result> 	
+			<result name="site_spmp9_detail" type="freemarker">/siteactionresultclient/site_spmp9_detail.ftl</result> 			
+			<result name="site_spmp4item_detail" type="freemarker">/siteactionresultclient/product/site_spmp4item_detail.ftl</result>
+			<result name="site_product" 		 type="freemarker">/siteactionresultclient/site_product.ftl</result>
+			<result name="site_guest_leaveword"  type="freemarker">/siteactionresultclient/site_guest_leaveword.ftl</result>
+			<result name="site_guest" type="freemarker">/siteactionresultclient/site_guest.ftl</result> 
+			<result name="site_job" type="freemarker">/siteactionresultclient/site_job.ftl</result> 
+			<result name="site_guest_submit" type="freemarker">/siteactionresultclient/site_guest_submit.ftl</result> 
+			<result name="site_link_detail" type="freemarker">/siteactionresultclient/site_link_detail.ftl</result> 
+			<result name="site_rss" type="freemarker">/rss/rss.ftl</result> 
+			<result name="singpage" type="freemarker">/siteactionresultclient/site_singlepage.ftl</result>  
+			<result name="nothing" type="freemarker">/siteactionresultconversation/nothing.ftl</result>			
+			<result name="private_res" type="freemarker">/res/private_res.ftl</result> 			
+			<result name="export_error" type="dispatcher">export_error.ftl</result>			
+		</action> 
+		<action name="filedownload" class="com.snp.site.action.FileDownloadAction">
+			<interceptor-ref name="defaultStack"/>
+			<result name="error" type="freemarker">/error/operr_admin.ftl</result>	
+			<result name="filedown_lanmu" type="stream">
+				<param name="inputName">inputStream</param>
+				<param name="contentType">${contentType}</param>
+				<param name="contentDisposition">filename="${fileName}"</param>
+				<param name="bufferSize">2024</param>
+			</result>
+		</action>  
+		
+		<action name="fileupload" class="com.snp.site.action.FileUploadAction">
+		  	<interceptor-ref name="fileUpload"/>  
+		    <result name="ok" type="freemarker">/siteactionresultclient/ok.ftl</result>
+		</action>  			
+  	</package>
+</xwork>

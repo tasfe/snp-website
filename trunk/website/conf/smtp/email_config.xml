@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.4.2_04" class="java.beans.XMLDecoder">
+ <object class="com.snp.site.config.EmailConfig"> 
+   <void property="mailAnsong"> 
+   <string>snpmaster@snpsoft.com</string> 
+  </void> 
+  <void property="mailError"> 
+   <string>snpmaster@snpsoft.com</string> 
+  </void> 
+  <void property="validateImage"> 
+   <string></string> 
+  </void>   
+  <!-- 
+  <void property="emailList"> 
+   
+   <void method="add"> 
+    <object class="com.snp.site.config.EmailObject"> 
+     <void property="formsender"> 
+      <string>snpmaster@163.com</string> 
+     </void> 
+     <void property="smtphost"> 
+      <string>smtp.163.com</string> 
+     </void> 
+     <void property="smtphostpassword"> 
+      <string>123456</string> 
+     </void> 
+     <void property="smtphostusername"> 
+      <string>snpmaster</string> 
+     </void> 
+     <void property="title"> 
+      <string>网容邮箱</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+   -->
+  
+ </object> 
+</java> 

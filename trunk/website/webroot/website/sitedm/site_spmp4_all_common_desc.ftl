@@ -1,0 +1,2 @@
+<#include "/website/macro/siteuser_property_edit.ftl">
+<@siteglobe property="spmp4common" palace=""  ftl="site_spmp4_all_common_desc.ftl" width=600 height=150 value=results["DM.Reload.SiteUser.Result"].spmp4common ftl_preview="none" />

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" 
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+ 	<bean id="mappingResources"
+          class="com.sunrise.sup.core.common.dao.hibernate.ListConcatenator">
+     
+        <constructor-arg>
+            <list>
+                <ref local="mappingResources-all"/>
+            </list>
+        </constructor-arg>
+     
+    </bean>
+
+    <bean id="mappingResources-all" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+    	    	<value>com/snp/site/model/SiteUser.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteSpmp1.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteSpmp2.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteSpmp3.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteSpmp4.hbm.xml</value>				
+    	    	<value>com/snp/site/model/SiteSpmp5.hbm.xml</value>	
+    	    	<value>com/snp/site/model/SiteSpmp6.hbm.xml</value>
+				<value>com/snp/site/model/SiteSpmp7.hbm.xml</value>	
+				<value>com/snp/site/model/SiteSpmp8.hbm.xml</value>	
+				<value>com/snp/site/model/SiteSpmp9.hbm.xml</value>	
+										
+
+    	    	<value>com/snp/site/model/SiteSpmp1Item.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteSpmp2Item.hbm.xml</value>				
+    	    	<value>com/snp/site/model/SiteSpmp3Item.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteSpmp4Item.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteSpmp4Sub.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteProduct.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteSpmp5Item.hbm.xml</value>
+				<value>com/snp/site/model/SiteSpmp6Item.hbm.xml</value>
+				<value>com/snp/site/model/SiteSpmp7Item.hbm.xml</value>
+				<value>com/snp/site/model/SiteSpmp8Item.hbm.xml</value>
+				<value>com/snp/site/model/SiteSpmp9Item.hbm.xml</value>
+				
+												
+    	    	<value>com/snp/site/model/SiteSuser.hbm.xml</value>	
+    	        <value>com/snp/site/model/SiteSuserItem.hbm.xml</value>
+				
+
+    	    	<value>com/snp/site/model/SiteAbout.hbm.xml</value>
+				<value>com/snp/site/model/SiteAddress.hbm.xml</value>    	    	
+    	    	<value>com/snp/site/model/SiteOrder.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteGuest.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteLink.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteJob.hbm.xml</value>
+				
+    	    	<value>com/snp/site/model/SiteOrderCheck.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteOrderInput.hbm.xml</value>
+     	    	<value>com/snp/site/model/SiteOrderRadio.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteOrderRadioItem.hbm.xml</value>
+    	    	<value>com/snp/site/model/SiteOrderCheckItem.hbm.xml</value>				
+				
+				<value>com/snp/site/model/SiteEnvelopabout.hbm.xml</value>
+    	    	<value>com/snp/site/model/SitePresource.hbm.xml</value>
+				<value>com/snp/site/model/SiteS1.hbm.xml</value>
+				<value>com/snp/site/model/SiteS2.hbm.xml</value>
+				 
+				<!-- 
+				<value>hibernate/model/Parent.hbm.xml</value>
+				<value>hibernate/model/Child.hbm.xml</value> 
+				 -->
+			 
+				 
+            </list>
+        </constructor-arg>
+     </bean>
+   	 
+         <bean id="SiteUser"            class="com.snp.site.model.SiteUser" singleton="false"/>                           
+	     <bean id="SiteSpmp1"           class="com.snp.site.model.SiteSpmp1" singleton="false"/>                           
+         <bean id="SiteSpmp2"           class="com.snp.site.model.SiteSpmp2" singleton="false"/>                           
+         <bean id="SiteSpmp3"           class="com.snp.site.model.SiteSpmp3" singleton="false"/>                           
+         <bean id="SiteSpmp4"           class="com.snp.site.model.SiteSpmp4" singleton="false"/>  
+         <bean id="SiteSpmp5"           class="com.snp.site.model.SiteSpmp5" singleton="false"/>  
+         <bean id="SiteSpmp6"           class="com.snp.site.model.SiteSpmp6" singleton="false"/>  
+         <bean id="SiteSpmp7"           class="com.snp.site.model.SiteSpmp7" singleton="false"/>  
+	     <bean id="SiteSpmp8"           class="com.snp.site.model.SiteSpmp8" singleton="false"/>  
+		 <bean id="SiteSpmp9"           class="com.snp.site.model.SiteSpmp9" singleton="false"/>  
+         <bean id="SiteSuser"           class="com.snp.site.model.SiteSuser" singleton="false"/>  
+	     <bean id="SiteSuserItem"       class="com.snp.site.model.SiteSuserItem" singleton="false"/>                           
+         <bean id="SiteSpmp1Item"       class="com.snp.site.model.SiteSpmp1Item" singleton="false"/>                           
+	     <bean id="SiteSpmp3Item"       class="com.snp.site.model.SiteSpmp3Item" singleton="false"/>                           
+         <bean id="SiteSpmp2Item"       class="com.snp.site.model.SiteSpmp2Item" singleton="false"/>                           
+	     <bean id="SiteSpmp4Item"       class="com.snp.site.model.SiteSpmp4Item" singleton="false"/>                           
+	     <bean id="SiteSpmp4Sub"        class="com.snp.site.model.SiteSpmp4Sub" singleton="false"/>                           
+	     <bean id="SiteProduct"         class="com.snp.site.model.SiteProduct" singleton="false"/>     
+	     <bean id="SiteSpmp5Item"       class="com.snp.site.model.SiteSpmp5Item" singleton="false"/>                           
+         <bean id="SiteSpmp6Item"       class="com.snp.site.model.SiteSpmp6Item" singleton="false"/>
+         <bean id="SiteSpmp7Item"       class="com.snp.site.model.SiteSpmp7Item" singleton="false"/>
+         <bean id="SiteSpmp8Item"       class="com.snp.site.model.SiteSpmp8Item" singleton="false"/>
+         <bean id="SiteSpmp9Item"       class="com.snp.site.model.SiteSpmp9Item" singleton="false"/>
+	     <bean id="SiteJob"             class="com.snp.site.model.SiteJob" singleton="false"/>                           
+         <bean id="SiteOrderCheck"      class="com.snp.site.model.SiteOrderCheck" singleton="false"/>                           
+         <bean id="SiteOrder"           class="com.snp.site.model.SiteOrder" singleton="false"/>                           
+         <bean id="SiteOrderRadioItem"  class="com.snp.site.model.SiteOrderRadioItem" singleton="false"/>                           
+         <bean id="SiteOrderInput"      class="com.snp.site.model.SiteOrderInput" singleton="false"/>                           
+         <bean id="SiteGuest"           class="com.snp.site.model.SiteGuest" singleton="false"/>                           
+         <bean id="SiteOrderCheckItem"  class="com.snp.site.model.SiteOrderCheckItem" singleton="false"/>                           
+         <bean id="SiteAbout"           class="com.snp.site.model.SiteAbout" singleton="false"/> 
+         <bean id="SiteAddress"         class="com.snp.site.model.SiteAddress" singleton="false"/> 	                          
+         <bean id="SiteLink"            class="com.snp.site.model.SiteLink" singleton="false"/>                           
+         <bean id="SiteOrderRadio"      class="com.snp.site.model.SiteOrderRadio" singleton="false"/>                           
+         <bean id="SiteEnvelopabout"    class="com.snp.site.model.SiteEnvelopabout" singleton="false"/>                           
+         <bean id="SitePresource"       class="com.snp.site.model.SitePresource" singleton="false"/> 
+         <bean id="SiteS1"              class="com.snp.site.model.SiteS1" singleton="false"/>
+	     <bean id="SiteS2"              class="com.snp.site.model.SiteS2" singleton="false"/>
+	     <!-- 
+	     <bean id="Parent"              class="com.snp.site.model.Parent" singleton="false"/>
+	     <bean id="Child"              class="com.snp.site.model.Child" singleton="false"/>
+	        -->
+	      
+</beans>

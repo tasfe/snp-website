@@ -1,0 +1,4 @@
+yourname               =あなたのお名前                                                                                                              
+administraor           =管理员                                                                                                               
+submit                 =決定      
+yoursuggestion         =ご提案    

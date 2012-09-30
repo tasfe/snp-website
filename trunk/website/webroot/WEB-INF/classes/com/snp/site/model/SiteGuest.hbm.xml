@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+<!-- 
+    Created by the Middlegen Hibernate plugin 2.1
+
+    http://boss.bekk.no/boss/middlegen/
+    http://www.hibernate.org/
+-->
+
+<class 
+    name="com.snp.site.model.SiteGuest" 
+    table="site_guest"
+>
+    <meta attribute="class-description" inherit="false">
+       @hibernate.class
+        table="site_guest"
+    </meta>
+
+    <id
+        name="id"
+        type="java.lang.Long"
+        column="id"
+    >
+        <meta attribute="field-description">
+           @hibernate.id
+            generator-class="native"
+            type="java.lang.Long"
+            column="id"
+
+        </meta>
+        <generator class="native" />
+    </id>
+
+    <property
+        name="name"
+        type="java.lang.String"
+        column="name"
+        length="40"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="name"
+            length="40"
+        </meta>    
+    </property>
+    <property
+        name="phone"
+        type="java.lang.String"
+        column="phone"
+        length="40"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="phone"
+            length="40"
+        </meta>    
+    </property>
+    <property
+        name="contact"
+        type="java.lang.String"
+        column="contact"
+        length="80"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="contact"
+            length="80"
+        </meta>    
+    </property>
+    <property
+        name="email"
+        type="java.lang.String"
+        column="email"
+        length="40"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="email"
+            length="40"
+        </meta>    
+    </property>
+    <property
+        name="qq"
+        type="java.lang.String"
+        column="qq"
+        length="40"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="qq"
+            length="40"
+        </meta>    
+    </property>
+    <property
+        name="url"
+        type="java.lang.String"
+        column="url"
+        length="40"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="url"
+            length="40"
+        </meta>    
+    </property>
+    <property
+        name="ip"
+        type="java.lang.String"
+        column="ip"
+        length="40"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="ip"
+            length="40"
+        </meta>    
+    </property>
+    <property
+        name="wordtime"
+        type="java.lang.String"
+        column="wordtime"
+        length="50"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="wordtime"
+            length="50"
+        </meta>    
+    </property>
+    <property
+        name="leaveword"
+        type="java.lang.String"
+        column="leaveword"
+        length="65535"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="leaveword"
+            length="65535"
+        </meta>    
+    </property>
+    <property
+        name="reply"
+        type="java.lang.String"
+        column="reply"
+        length="200"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="reply"
+            length="200"
+        </meta>    
+    </property>
+    <property
+        name="publicize"
+        type="java.lang.String"
+        column="publicize"
+        length="20"
+    >
+        
+    </property>
+    <property
+        name="sortstr"
+        type="java.lang.String"
+        column="sortstr"
+        length="30"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="sortstr"
+            length="30"
+        </meta>    
+    </property>
+    <property
+        name="filepath"
+        type="java.lang.String"
+        column="filepath"
+        length="200"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="filepath"
+            length="200"
+        </meta>    
+    </property>
+    <property
+        name="filename"
+        type="java.lang.String"
+        column="filename"
+        length="50"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="filename"
+            length="50"
+        </meta>    
+    </property>
+
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to SiteUser -->
+    <many-to-one
+        name="siteUser"
+        class="com.snp.site.model.SiteUser"
+        not-null="true"
+    >
+        <meta attribute="field-description">
+           @hibernate.many-to-one
+            not-null="true"
+           @hibernate.column name="userid"         
+        </meta>
+        <column name="userid" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

@@ -1,0 +1,7 @@
+@import "main0.css";
+body                           {background-color: #f00;padding: 80px 0px 0px 0px ; }
+#div-page                      {padding: 0px 0px 0px 0px ;}
+#top-lanmu                     {font-size:13px;width:100%;background:#f00; height:22px;padding:6px 5px 0px 5px;}
+#top-lanmu li a                {COLOR: #fff; padding:15px 15px 0px 6px;}
+#top-lanmu li  a:hover         {color: #F9D060;}
+

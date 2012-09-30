@@ -1,0 +1,4 @@
+submit                 =submit
+yourname               =name
+yoursuggestion         =leave word
+administraor           =administraor

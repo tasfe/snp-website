@@ -1,0 +1,4 @@
+submit                 =提交
+yourname               =您的姓名                                                                                     
+yoursuggestion         =您的建議   
+administraor           =管理员                                                                                  

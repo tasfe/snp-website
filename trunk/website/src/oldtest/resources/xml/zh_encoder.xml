@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_14" class="java.beans.XMLDecoder"> 
+ <object class="com.snp.site.config.NewsConfig"> 
+  <void property="newsList"> 
+   <void method="add"> 
+    <object class="com.snp.site.config.NewsObject"> 
+     <void property="title"> 
+         <string><![CDATA[<B>goolge帮助</B>]]></string> 
+
+     </void> 
+     <void property="url"> 
+      <string>http://www.baidu.com</string> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="com.snp.site.config.NewsObject"> 
+     <void property="title"> 
+       <string><![CDATA[<B>google帮助]]></string> 
+     </void> 
+     <void property="url"> 
+      <string>http://www.google.com/notebook/public/05951760370772141165/BDQ9vDQoQ2fPZ8JEk?hl=zh-CN#SDRStDQoQqu3h8JEk</string> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

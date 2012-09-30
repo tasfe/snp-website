@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="businessManager" class="com.sunrise.sup.core.impl.BusinessManager" singleton="true">
+		<property name="businessNames">
+			<map>			
+				<entry key="DeleteSpmp8"><ref bean="DeleteSpmp8"/></entry>
+				<entry key="DeleteSpmp8Item"><ref bean="DeleteSpmp8Item"/></entry>					
+				<entry key="DeleteSpmp4"><ref bean="DeleteSpmp4"/></entry>
+				<entry key="DeleteSpmp4Item"><ref bean="DeleteSpmp4Item"/></entry>							
+				<entry key="DeleteFileOnServer"><ref bean="DeleteFileOnServer"/></entry>				
+				<entry key="PutClientUserToSession"><ref bean="PutClientUserToSession"/></entry>											
+				<entry key="LanmuSetting"><ref bean="LanmuSetting"/></entry>
+				<entry key="UpdateUrlMap"><ref bean="UpdateUrlMap"/></entry>				
+				<entry key="DownSitedata"><ref bean="DownSitedata"/></entry>
+				<entry key="UpdateProductLink"><ref bean="UpdateProductLink"/></entry>		
+				<entry key="ChangeRank"><ref bean="ChangeRank"/></entry>	
+                <entry key="MoveSpmp4Item"><ref bean="MoveSpmp4Item"/></entry>	
+                <entry key="MoveContent"><ref bean="MoveContent"/></entry>	
+                <entry key="CreateNewUser"><ref bean="CreateNewUser"/></entry>
+                 <entry key="FtpAdmin"><ref bean="FtpAdmin"/></entry>	
+                
+                
+			</map>
+		</property>
+	</bean>
+	<bean id="ChangeRank"  class="com.snp.site.sup.business.ChangeRank"/>
+	<bean id="DeleteSpmp8" class="com.snp.site.sup.business.DeleteSpmp8"/>
+	<bean id="DeleteSpmp8Item" class="com.snp.site.sup.business.DeleteSpmp8Item"/>
+	<bean id="DeleteSpmp4" class="com.snp.site.sup.business.DeleteSpmp4"/>
+	<bean id="DeleteSpmp4Item" class="com.snp.site.sup.business.DeleteSpmp4Item"/>	
+	<bean id="DeleteFileOnServer" class="com.snp.site.sup.business.DeleteFileOnServer"/>
+	<bean id="PutClientUserToSession" class="com.snp.site.sup.business.PutClientUserToSession"/>
+    <bean id="LanmuSetting" class="com.snp.site.sup.business.LanmuSetting"/>	
+	<bean id="UpdateUrlMap" class="com.snp.site.sup.business.UpdateUrlMap"/>	
+	<bean id="DownSitedata" class="com.snp.site.sup.business.DownSitedata"/>	
+	<bean id="UpdateProductLink" class="com.snp.site.sup.business.UpdateProductLink"/>	
+
+	
+	<bean id="MoveSpmp4Item" class="com.snp.site.sup.business.MoveSpmp4Item"/>	
+	<bean id="MoveContent" class="com.snp.site.sup.business.MoveContent"/>	
+	
+	<bean id="CreateNewUser" class="com.snp.site.sup.business.CreateNewUser"/>		
+	<bean id="FtpAdmin" class="com.snp.site.sup.business.FtpAdmin"/>		
+
+		
+ </beans>

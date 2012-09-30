@@ -1,0 +1,92 @@
+﻿<project name="wasant" basedir="." default="updateAndStart">
+
+ <property name="was.root" value="E:\WAS"/>
+ <property name="wsanttasks.jar" value="${was.root}/plugins/com.ibm.ws.runtime.jar"/>
+ <property name="app.name" value="L_NGCRM_war"/>
+ <property name="ear.file.name" value="L_NGCRM.war"/>
+ <property name="ear.file" value="./${ear.file.name}"/>
+ <property name="contextroot" value="/"/>
+ <property name="node.name" value="Node1_CRMCS" />
+ <property name="cell.name" value="Cell_CRMCS"/>
+ <property name="server.name" value="CI_hudson" />  
+  
+    <property name="user" value="admin"/>
+    <property name="password" value="admin"/>
+    
+ <!--      
+    <property name="host" value="10.200.27.126"/>
+ -->   
+    <!--端口号为 Deployment manager的System administration->Deployment manager->Ports->SOAP_CONNECTOR_ADDRESS -->
+ <!--   
+    <property name="port" value="8882"/>
+ -->   
+    <property name="conntype" value="SOAP"/>
+  
+  <!--端口转发之后-->  
+    <property name="host" value="10.249.200.33"/>
+    <property name="port" value="8882"/>
+    
+ <!-- 使用到的任务 -->
+    <taskdef name="wsStartServer" classname="com.ibm.websphere.ant.tasks.StartServer" classpath="${wsanttasks.jar}" />
+    <taskdef name="wsStopServer" classname="com.ibm.websphere.ant.tasks.StopServer" classpath="${wsanttasks.jar}" />
+    <taskdef name="wsInstallApp" classname="com.ibm.websphere.ant.tasks.InstallApplication" classpath="${wsanttasks.jar}" />
+    <taskdef name="wsUninstallApp" classname="com.ibm.websphere.ant.tasks.UninstallApplication" classpath="${wsanttasks.jar}" />
+    <taskdef name="wsStartApp" classname="com.ibm.websphere.ant.tasks.StartApplication" classpath="${wsanttasks.jar}" />
+    <taskdef name="wsStopApp" classname="com.ibm.websphere.ant.tasks.StopApplication" classpath="${wsanttasks.jar}" />
+    <taskdef name="wsListApps" classname="com.ibm.websphere.ant.tasks.ListApplications" classpath="${wsanttasks.jar}" />
+    <taskdef name="wsAdmin" classname="com.ibm.websphere.ant.tasks.WsAdmin" classpath="${wsanttasks.jar}" />
+ <!-- 更新应用-->
+ <target name="updateAndStart" description="Update Application ${app.name}">
+	<antcall target="StopApp"/>
+	<antcall target="UninstallApp"/>
+	<antcall target="wsAdminInstallApp"/>
+	<antcall target="StopServer" />
+	<antcall target="StartServer" />
+	<sleep minutes="3" />
+	<antcall target="StartApp" />    
+</target>
+
+
+
+<target name="ListApp">
+ <wsListApps  host="${host}" port="${port}" conntype="${conntype}" washome="${was.root}" user="${user}" password="${password}"/>
+</target>
+
+<target name="StopApp">
+ <wsStopApp  host="${host}"  application="${app.name}" port="${port}" conntype="${conntype}"  server="${server.name}" failonerror="false" user="${user}" password="${password}" />
+</target>
+ 
+<target name="UninstallApp">
+<wsUninstallApp  host="${host}"
+   application="${app.name}" port="${port}" conntype="${conntype}" washome="${was.root}"  failonerror="false" user="${user}" password="${password}"/>
+</target>
+  
+<target name="InstallApp">
+<!-- 
+2011年4月21日12:36:50 wsInstallApp 这个task 有bug，如果需要安装超过100M 的war，会出现 OOM。原因是ws_ant在调用 JVM 最大占用内存的参数xmx是hard code 写成 256M的。
+work around ： 使用wsAdmin这个task, 这个task 提供了 jvmMaxMemory 非hard code
+
+ -->	
+<wsInstallApp host="${host}"
+             ear="${ear.file.name}"  port="${port}" conntype="${conntype}" washome="${was.root}" user="${user}" password="${password}"
+             options="-node ${node.name} -cell ${cell.name} -server ${server.name} -appname ${app.name} -MapWebModToVH {{${ear.file.name} ${ear.file.name},WEB-INF/web.xml default_host}} -contextroot ${contextroot}" failonerror="true"/>
+</target>
+
+<target name="wsAdminInstallApp">
+
+<wsAdmin host="${host}" port="${port}" conntype="${conntype}" failonerror="true" user="${user}" password="${password}" jvmMaxMemory="768M"   command="$AdminApp install  ${ear.file.name} {  -node ${node.name} -cell ${cell.name} -server ${server.name} -appname ${app.name} -MapWebModToVH {{${ear.file.name} ${ear.file.name},WEB-INF/web.xml default_host}} -contextroot / }" />        
+</target>
+
+<target name="StopServer">
+<wsAdmin host="${host}" port="${port}" conntype="${conntype}"  command="$AdminControl stopServer  ${server.name} ${node.name}" failonerror="false" user="${user}" password="${password}"/>
+</target>
+
+<target name="StartServer">
+<wsAdmin host="${host}" port="${port}" conntype="${conntype}"  command="$AdminControl startServer  ${server.name} ${node.name}" failonerror="false" user="${user}" password="${password}" />
+</target>
+
+<target name="StartApp">
+<wsStartApp  host="${host}" application="${app.name}" port="${port}" conntype="${conntype}"  server="${server.name}" failonerror="false" user="${user}" password="${password}"/>
+</target>
+
+</project>
