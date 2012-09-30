@@ -1,0 +1,2 @@
+<#include "/website/macro/siteuser_property_edit.ftl">
+<@siteglobe property="contentleft" palace="网站左下部"  ftl="globe_left.ftl" width=400 height=200 value=results["DM.Reload.SiteUser.Result"].contentleft />

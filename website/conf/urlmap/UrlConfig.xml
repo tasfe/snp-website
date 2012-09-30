@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.4.2_16" class="java.beans.XMLDecoder"> 
+ <object class="com.snp.site.config.UrlConfig"> 
+  <void property="urlmap"> 
+   <void method="put"> 
+    <string>huameng</string> 
+    <string>huamengfur</string> 
+   </void> 
+   <void method="put"> 
+    <string>jos</string> 
+    <string>chinajos.cn</string> 
+   </void> 
+   <void method="put"> 
+    <string>szzh</string> 
+    <string>szzh.cn</string> 
+   </void> 
+   <void method="put"> 
+    <string>ywowsltd</string> 
+    <string>chinalcl</string> 
+   </void> 
+   <void method="put"> 
+    <string>waimao</string> 
+    <string>snpsoft.cn</string> 
+   </void> 
+   <void method="put"> 
+    <string>brandup</string> 
+    <string>brandup</string> 
+   </void> 
+   <void method="put"> 
+    <string>xiejiw</string> 
+    <string>xiejiw</string> 
+   </void> 
+   <void method="put"> 
+    <string>huashuai</string> 
+    <string>huashuai168</string> 
+   </void> 
+   <void method="put"> 
+    <string>snp</string> 
+    <string>bb22</string> 
+   </void> 
+   <void method="put"> 
+    <string>eye</string> 
+    <string>eyegz</string> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

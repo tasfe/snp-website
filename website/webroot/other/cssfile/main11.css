@@ -1,0 +1,13 @@
+@import "main2.css";
+
+/*颜色方案四,绿色边框----------------------------------------*/
+/*下面第一、二句决定边框颜色，第三句决定背景颜色*/
+
+/*边框色*/
+.color4 .b2,.color4 .b3,.color4 .b4,.color4 .b5,.color4 .b6,.color4 .b7,.color4 .content{border-color:#FFEFA5;}
+.color4 .b1,.color4 .b8{background:#E3E197;}
+/*背景色*/
+.color4 .b2,.color4 .b3,.color4 .b4,.color4 .b5,.color4 .b6,.color4 .b7,.color4 .content{background:#FFFBF7;}
+
+/*背景色*/
+.color6 .b2,.color6 .b3,.color6 .b4,.color6 .b5,.color6 .b6,.color6 .b7,.color6 .content{background:#FFFBF7;}

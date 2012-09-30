@@ -1,0 +1,9 @@
+@import "../../other/jquery184/development-bundle/themes/cupertino/jquery-ui-1.8.13.custom.css" ;
+@import "main_jq_ui.css";
+a                              {color: #00A51A;text-decoration: none;   }
+a:hover                        {color: #F9D060; text-decoration:underline;}
+#top-lanmu                   {border-bottom:1px solid #A7D11C;}
+
+#snp-left-lanmutitle           {COLOR: #666666;	padding: 7px 0px 2px 8px;font:13px;font-weight: bold;}
+
+

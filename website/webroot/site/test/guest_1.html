@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+﻿<title></title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<script type="text/javascript" src="../../other/highslide/highslide-with-html.js"></script>
+<script type="text/javascript" src="../../other/jquery151/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="../../other/website/snp.js"></script>
+<script type="text/javascript" src="../../other/swfobject.js"></script>
+<script type="text/javascript" src="../../other/jquery184/development-bundle/ui/minified/jquery184.js"></script>	
+
+<link type="text/css" href="../../other/cssfile/main51.css" rel="stylesheet" />
+<link type="text/css" href="../../other/highslide/highslide.css" rel="stylesheet" />
+<script type="text/javascript">
+	$(function(){
+		$("#top-lanmu").buttonset();
+		$("#div-dir").accordion({ header: "h3" });
+	});
+	hs.graphicsDir = '../../other/highslide/graphics/';
+	hs.outlineType = 'rounded-white';
+	hs.wrapperClassName = 'draggable-header';
+	hs.minWidth=600;
+	hs.height=300;	
+</script>
+	
+<body style="text-align:center;">
+<div id=div-page>
+<div id=div-content  style="margin-left:auto;margin-right:auto;"> 
+<!--top-->
+<div id="div-top-link" >
+	<div style="float:left;" >
+ 		<span id="top-extlink">
+    
+<a href="spmp9_1_1.html"><span>&nbsp;ss</span></a>		
+  		</span>
+    </div>  
+     <div id="div-language">                          
+</div>
+</div>
+<div id=div-title>
+    <table style="table-layout:fixed;"> 
+        <tr>
+        	<td>
+              <div ><font face=" Arial Black" size="6"><strong><font color="#ff6600">SNP</font>&nbsp;<font size="1"><font face=" Fixedsys" color="#ff6600">demo-data&nbsp;&nbsp;&nbsp; <br />
+</font></font></strong></font></div>     
+            </td>
+        </tr>
+    </table>
+</div>
+   
+
+<div> 
+    <ul id=top-lanmu style="text-align:right"  >
+<li><a href="index_1.html"><span  >&nbsp;首页</span></a></li><li><a href="spmp4_1_2.html"><span  >&nbsp;图片展示</span></a></li><li><a href="spmp8_1.html"><span  >&nbsp;视频展示</span></a></li><li><a href="address_1.html"><span  >&nbsp;联系我们</span></a></li><li><a href="guest_1.html"><span  >&nbsp;用户感言</span></a></li>    </ul>  
+    <div class="ui-state-default " style="border-bottom: 0px"></div>       
+</div>
+<div id=hengtiao></div>    
+<div id=ht></div>  
+<!--lanmu end-->		            
+		
+	
+<div id=div-main  >
+    <table width=100%>
+        <tr>
+    <td  valign=top >
+	    <div  id="div-dir" style="width:200px;">
+	        <div id="navlist">
+ 		<h3><a href="#">
+为什么选择我们</a></h3>
+ 		<div style="line-height:22px;"> 
+	
+		 <a href="spmp1_1_4.html" target=_self ><span style="margin:210px 0px 13px 0px;">
+无需繁琐的备案</span></a>	
+		&nbsp;&nbsp;<br>
+	
+		 <a href="spmp1_1_5.html" target=_self ><span style="margin:210px 0px 13px 0px;">
+操作简单轻松维护</span></a>	
+		&nbsp;&nbsp;<br>
+	
+		 <a href="spmp1_1_6.html" target=_self ><span style="margin:210px 0px 13px 0px;">
+只需33元即可开通网站</span></a>	
+		&nbsp;&nbsp;<br>
+		</div>	
+			    
+			    
+	        </div>
+	    </div> 
+        <div>
+	          
+	        <br>  			        
+        </div> 	
+    </td>
+<!-------------------------内容变化区----------------------------->
+<script language="javascript" type="text/javascript">
+    function ajax(){	
+        if (document.getElementById('guest_name_lanmu').value.length == 0){
+			document.getElementById('info_input_name').innerHTML='* 姓名不能为空';
+			return ;
+	    }		   
+	   	if (document.getElementById('guest_leaveword_lanmu').value.length == 0){
+			document.getElementById('info_txt_leaveword').innerHTML='* 内容不能为空';
+			return ;
+	    }
+	    $.ajax({
+            type:"POST",
+         	url: "site!siteGuestSubmit.action",
+		 	data:"siteuserid=2"+"&leaveword_lanmu="+document.getElementById('leaveword_lanmu').value+"&name_lanmu="+document.getElementById('guest_name_lanmu').value,
+		 	cache: false,
+		 	success: function(html){
+		    	document.getElementById('div_result').innerHTML=html;
+		 
+		 		document.getElementById('bt_sure').disabled =true;
+		 		
+		 	 }
+		});   
+	}  
+	function change_leaveword(){
+	    if (document.getElementById('guest_leaveword_lanmu').value.length != 0){
+			document.getElementById('info_txt_leaveword').innerHTML='';
+		}	
+	}
+	function change_name(){
+	    if (document.getElementById('guest_name_lanmu').value.length != 0){
+			document.getElementById('info_input_name').innerHTML='';
+		}	
+	}			
+</script> 
+<td valign=top  width=100%>
+   	<div id=div-mid>
+			<table  style="table-layout:fixed" >
+		        <tr>
+			        <td  id=snp-detail >
+				        <p id=snp-tb-title >维新电子&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</p>
+			   			<div id=snp-tb-content>
+			   			    所见即所得，跟使用QQ空间一样简单，的确做到真正非专业人员也能维护。解决了我们公司网站更新的老大难问题。
+							
+							<div style='border-bottom: #CCCCCC 1px dotted;'> </div>
+						</div>
+				        <p id=snp-tb-title >付生&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</p>
+			   			<div id=snp-tb-content>
+			   			    设计师的即时更新，能在线看到网站的最新状态，大大节省了沟通成本
+							
+							<div style='border-bottom: #CCCCCC 1px dotted;'> </div>
+						</div>
+				        <p id=snp-tb-title >酒具销售&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp</p>
+			   			<div id=snp-tb-content>
+			   			    可以导出HTML网页包的功能非常好，我可以随时用优盘带着公司网站的资料，给客户展示，还能直接发给客户，作为企业资料介绍。非常方便。谢谢！
+							
+							<div style='border-bottom: #CCCCCC 1px dotted;'> </div>
+						</div>
+				    	<div id=div_hide style="display:none;">
+				    </div>	
+		         
+			        	<br> <b>
+						 请您留言
+			        	</b><br>
+			        	<TEXTAREA  id=guest_leaveword_lanmu  name=leaveword_lanmu class="input-snp"  onChange="change_leaveword(this.value);" onblur="this.className='input-snp'" onfocus="this.className='input-snp-onfocus'"   rows=6 cols=78></TEXTAREA> 
+			        	<span id=info_txt_leaveword style="color: #f00;"></span>
+			           	<br>
+			           	姓名
+ 			           	<input id=guest_name_lanmu  onChange="change_name(this.value);"    class="input-blur"  onfocus="this.className='input-focus'"   size=4  name=name_lanmu value=""><span id=guest_name_check style="color: #f00;"></span>
+					   	<span id=info_input_name style="color: #f00;"></span>
+                        &nbsp;&nbsp;
+                        <input class=bt  type="submit"  id="bt_sure"  onclick="javascript:ajax()"   value="提交">
+                        <div id=div_result style="color: #f00;"></span>
+			       </td>
+		       </tr>	    
+    		   <tr>
+			       <td id=snp-detail>
+		  		    </td>
+		        </tr>
+			</table>
+		       
+    </div> 
+</td>
+<!-------------------------内容变化区----------------------------->			
+		</tr>
+	</table>
+</div>
+<div class="ui-state-default "></div>
+<div id="bottom" >
+	<div class="ui-widget">
+		<div class="ui-state-highlight ui-corner-all" style="margin-top: 5px; padding:16px;"> 
+			<p>
+			<p>&nbsp; &copy;2011&nbsp; 专注用户体验&nbsp;&nbsp; 简单专业&nbsp; &nbsp;&nbsp; /&nbsp; 本演示站点为客户试用的演示数据 可以随意添加删除修改 .</p></p>
+		</div>
+	</div>		
+	
+
+	<div id="bottom-extlink" >
+	
+    
+		           &nbsp<a target=blank href=tencent://message/?uin=870133482&Site=www.snpsoft.net&Menu=yes><img align=absmiddle border=0  src=../../other/qq_online.gif >&nbsp;建站咨询</a>
+		           &nbsp<a target=blank href=tencent://message/?uin=870133482&Site=www.snpsoft.net&Menu=yes><img align=absmiddle border=0  src=../../other/qq_online.gif >&nbsp;技术支持</a>
+		           &nbsp<a target=blank href=tencent://message/?uin=870133482&Site=www.snpsoft.net&Menu=yes><img align=absmiddle border=0  src=../../other/qq_online.gif >&nbsp;投诉</a>
+	</div>  
+	   
+</div> 
+<div class="bottom_background">
+	<div class="snp-bottom-new"></div>
+</div>
+
+</div><!--end page-->
+</body>
+			      

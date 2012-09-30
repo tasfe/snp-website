@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.4.2_04" class="java.beans.XMLDecoder"> 
+ <object class="com.snp.common.datasource.DataBaseConfig"> 
+ 
+  <void property="url"> 
+   <string>jdbc:h2:tcp://localhost/~/snp</string> 
+  </void>
+  <!--
+   <void property="url"> 
+   <string>jdbc:h2:~/snp</string> 
+  </void>
+ --> 
+  <void property="username"> 
+   <string>sa</string> 
+  </void> 
+  <void property="password"> 
+   <string></string> 
+  </void> 
+  <void property="driverClassName"> 
+   <string>org.h2.Driver</string> 
+  </void> 
+  <void property="hibernate_dialect"> 
+	<string>org.hibernate.dialect.H2Dialect</string> 
+  </void> 
+   <!---create update --> 
+  <void property="hibernate_hbm2ddl"> 
+   <string>none</string> 
+  </void>
+
+  <void property="hibernate_show_sql"> 
+   <string>false</string> 
+  </void> 
+  <void property="hibernate_transactionfactoryclass"> 
+    <string>org.hibernate.transaction.JDBCTransactionFactory</string> 
+  </void> 
+  <void property="maxActive"> 
+   <int>60</int> 
+  </void> 
+  <void property="maxIdle"> 
+   <int>2</int> 
+  </void> 
+  <void property="maxWait"> 
+   <int>3</int> 
+  </void> 
+
+</object> 
+</java> 

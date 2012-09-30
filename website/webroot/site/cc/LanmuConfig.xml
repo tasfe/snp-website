@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.6.0_10" class="java.beans.XMLDecoder"> 
+ <object class="com.snp.site.config.LanmuConfig"> 
+  <void property="lanmu2"> 
+   <string>spmp4</string> 
+  </void> 
+  <void property="lanmu3"> 
+   <string>spmp8</string> 
+  </void> 
+  <void property="lanmu4"> 
+   <string>address</string> 
+  </void> 
+  <void property="lanmu5"> 
+   <string>guest</string> 
+  </void> 
+  <void property="lanmudir1"> 
+   <string>spmp1</string> 
+  </void> 
+  <void property="lanmudiralign"> 
+   <string>right</string> 
+  </void> 
+  <void property="qqbottom"> 
+   <string>870133482:建站咨询,870133482:技术支持,870133482:投诉</string> 
+  </void> 
+  <void property="videoautoplay"> 
+   <string></string> 
+  </void> 
+  <void property="videoheight"> 
+   <string>125</string> 
+  </void> 
+  <void property="videologtxt"> 
+   <string>www.snpsoft.net</string> 
+  </void> 
+  <void property="videowidth"> 
+   <string>200</string> 
+  </void> 
+  <void property="vphonindex"> 
+   <string>YES</string> 
+  </void> 
+ </object> 
+</java> 

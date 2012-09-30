@@ -1,0 +1,76 @@
+
+*                              {border:0px;margin:0;padding:0;text-align:left}
+body, td, input, textarea, select, button {font: 12px Helvetica, Arial, sans-serif; }
+
+
+#snp-detail                    {line-height:22px;align:left}
+.input-snp                     {background-color: #EEEEEE;border-bottom: #FFFFFF 1px solid;border-left: #CCCCCC 1px solid;border-right: #FFFFFF 1px solid;border-top: #CCCCCC 1px solid;}
+
+.input-snp-onfocus             {background-color:#F0F8FF;border: 1px solid #333333;}
+a                              {color: #000;text-decoration: none;}
+a:hover                        {color: #f00;text-decoration: none;}
+#snp-image                     {border: #ccc 1px solid;padding:2px}
+
+#div-page                      {background-color: #fff;padding: 10px 0px 0px 0px ;}
+#div-mid                       {}
+#div-content                   {width:880px;}
+#div-top-link                  {padding: 5px 5px 2px 5px ; height:18px; }
+#top-extlink a span            {padding: 0px 5px 0px 0px;}
+#input-search                  {width:100px ;font-size: 11px;border: 1px solid #ccc;}
+#div-language                  {float:right}
+#div-language  li              {display: inline;}
+
+
+#top-lanmu                     {width:100%;border-bottom:1px solid #ccc; height:20px; text-align:center}
+#top-lanmu li                  {display: inline;}
+#top-lanmu li a                {font-weight: bold;padding:5px 0px 0px 25px;}
+
+#bottom                        {width:100%;text-align:left;}
+#snp-admin                    {padding-left:5px}
+
+#bottom-content                {padding:10px ;}
+#bottom-extlink                {padding-top:8px ;float:left}
+#bottom-extlink a span         {padding: 0px 5px 0px 0px;}
+
+#div-dir                       { float: left;  width:180px } 
+#snp-left-lanmutitle           {padding: 0px 0px 0px 0px;font-weight: bold;}
+
+
+#snp-listclasses-title         {line-height:28px;  font-weight: bold; COLOR: #000;}
+#snp-item-title                {background-color:#9D9D9D; line-height:26px;  font-weight: bold; COLOR: #fff; }
+
+#snp-video-bg                  {width:100%}
+#snp-video-gif                 {border: #A1C2E2 1px solid;padding: 5px 6px 3px 6px; }  
+#snp-video-div                 {background-color:#000; }  
+
+
+
+#snp-div-block-title           {padding: 0px 5px 3px 0px;font-weight: bold;  color: #FF5426}
+#snp-div-block-content         {padding: 0px 5px 5px 0px;}
+#snp-tb-title                  {padding: 0px 2px 0px 3px;border:1px solid #EEEEEE;background:#EEEEEE;}
+#snp-tb-content                {padding: 8px 2px 2px 3px;border:1px solid #EEEEEE; }           
+
+
+
+#bottom                        {border-top :#ccc 0px solid;padding-top:10px}
+
+
+.input-blur              {border: 1px solid #c9d7f1;}
+.input-focus             {border: 1px solid #dcc57f;background-color:#ffffd3;}
+textarea,input {	border:1px solid #ddd; }
+input:focus { border: 1px dotted black; }
+textarea.error,input.error { border: 1px dotted red; }
+
+
+
+/*通用样式--容器宽度值*/
+.sharp{float:left;}
+.sharp .content div{text-indent:2em;}
+
+.b1,.b2,.b3,.b4,.b5,.b6,.b7,.b8{height:1px; font-size:1px; overflow:hidden; display:block;}
+.b1,.b8{margin:0 5px;}
+.b2,.b7{margin:0 3px;border-right:2px solid; border-left:2px solid;}
+.b3,.b6{margin:0 2px;border-right:1px solid; border-left:1px solid;}
+.b4,.b5{margin:0 1px;border-right:1px solid; border-left:1px solid; height:2px;}
+.content {border-right:1px solid;border-left:1px solid;overflow:hidden;}
+

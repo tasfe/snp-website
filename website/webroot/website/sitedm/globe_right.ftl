@@ -1,0 +1,2 @@
+<#include "/website/macro/siteuser_property_edit.ftl">
+<@siteglobe property="contentright" palace="right"  ftl="globe_right.ftl" width=500 height=250 value=results["DM.Reload.SiteUser.Result"].contentright />

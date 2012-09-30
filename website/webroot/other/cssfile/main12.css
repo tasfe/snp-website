@@ -1,0 +1,19 @@
+@import "main1.css";
+
+#top-lanmu                     { border: none;}
+#bottom                        { border: none;}
+#div-top-link                  { border: none;}
+#snp-detail                    { color: #787878;}
+#div-top-link  a               {font-weight: normal;} 
+
+a                              {color:#787878;;text-decoration: none;}
+a:hover                        {font: 13px;color: #ccc;background-color: #2f2f2f; text-decoration: none;}
+#snp-left-lanmutitle           {color:#787878;	padding: 7px 0px 2px 8px;font:13px;font-weight: bold;background-color: #2f2f2f;}
+#top-lanmu                     {width:100%;border: none; text-align:right}
+#top-lanmu li                  {display: inline;padding:0 0 0 3px;text-decoration:none;}
+#top-lanmu li  a               { font: 14px 幼圆; font-weight: bold;COLOR: #9dcfff; padding:5px 15px 0px 6px;}
+#top-lanmu li  a:hover         {text-decoration:none;  color: #ccc;}
+
+#snp-left-lanmutitle a         { COLOR: #f00; padding:5px 15px 0px 6px;}
+#snp-listclasses-title         {line-height:28px; font-size: 13px; font-weight: bold;COLOR: #FF5426; }
+#snp-item-title                {line-height:26px;  font-size: 12px;  COLOR: #fff; }

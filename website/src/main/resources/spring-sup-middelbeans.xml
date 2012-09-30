@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+     
+   	<bean id="hibernateProperties" class="com.snp.common.datasource.HibernateProperties">
+        <constructor-arg>                
+            <props>
+                 <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>                     
+			</props>
+        </constructor-arg>
+    </bean>		
+    <bean id="SpringDataSourceBeanExt" class="com.snp.common.datasource.SpringDataSourceBeanExt" destroy-method="close"> </bean>	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+         <property name="dataSource">
+			<ref bean="SpringDataSourceBeanExt"/>
+		 </property>
+		 <property name="hibernateProperties">
+            <ref bean="hibernateProperties" />
+         </property>
+         <property name="mappingResources">
+            <ref bean="mappingResources" />
+        </property>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+	<bean id="dataMHibernate" class="com.sunrise.sup.dm.DataMHibernate">
+        <property name="sessionFactory"><ref local="sessionFactory"/></property>
+    </bean>
+    
+    
+
+    <bean id="daoTarget" class="com.sunrise.sup.core.common.dao.hibernate.BaseDAOHibernate" autowire="byName"/>
+	<bean id="dao" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+        <property name="transactionManager"><ref local="transactionManager"/></property>
+        <property name="target"> <ref local="daoTarget"/></property>
+        <property name="transactionAttributes">
+            <props>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="advanceDAOTarget" class="com.sunrise.sup.core.common.dao.hibernate.AdvanceDAOHibernate" autowire="byName"/>
+    <bean id="advanceDAO" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="transactionManager">
+            <ref local="transactionManager"/>
+        </property>
+        <property name="target">
+            <ref local="advanceDAOTarget"/>
+        </property>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>
+	
+    <bean id="operationManager" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" >
+        <property name="transactionManager">
+            <ref local="transactionManager"/>
+	    </property>
+        <property name="target">
+            <ref local="operationManagerTarget"/>
+        </property>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="*">PROPAGATION_REQUIRED</prop>
+            </props>
+        </property>
+    </bean>	
+    
+    <bean id="operationManagerTarget" class="com.sunrise.sup.core.impl.OperationManagerImpl"  autowire="byName">
+		<property name="instanceDeclareWrappers">
+			<map>
+				<entry key="DM">
+					<value>com.sunrise.sup.dm.DataInstanceDeclareWrapper</value>
+				</entry>
+				<entry key="WF">
+					<value>com.sunrise.sup.wf.operation.WorkItemInstanceDeclareWrapper</value>
+				</entry>
+			</map>
+		</property>
+		<property name="operationWrappers">
+			<map>   
+			    <entry key="DM.business">
+					<value>spring:dataCRUDOperationWrapper</value>
+				</entry>
+				<entry key="DM.Create">
+					<value>spring:dataCRUDOperationWrapper</value>
+				</entry>
+				<entry key="DM.Update">
+					<value>spring:dataCRUDOperationWrapper</value>
+				</entry>
+				<entry key="DM.Delete">
+					<value>spring:dataCRUDOperationWrapper</value>
+				</entry>
+				<entry key="DM.Reload">
+					<value>spring:dataCRUDOperationWrapper</value>
+				</entry>
+				<entry key="DM.Query">
+					<value>spring:dataCRUDOperationWrapper</value>
+				</entry>
+				<entry key="DM.Upload">
+					<value>spring:dataCRUDOperationWrapper</value>
+				</entry>
+			
+			</map>
+		</property>	
+    	<property name="expressionWrappers">
+			<map/>
+		</property>	
+		<property name="aliasPOMappingManager"><ref bean="POAliasMappingManager"/></property>
+		<property name="defaultExpressionWrapper"><ref bean="defaultExpressionWrapper"/></property>	
+    </bean>
+    <!--别名管理的作用吧-->
+	<bean id="POAliasMappingManager" class="com.sunrise.sup.core.impl.POAliasMappingManager">
+		<property name="aliasPOMapping">
+			<map></map>
+		</property>
+    </bean>
+
+	
+	<bean id="uploadPicFile" class="com.snp.site.sup.dm.UploadPicFile" singleton="false"></bean>
+	<bean id="uploadFlvFile" class="com.snp.site.sup.dm.UploadFlvFile" singleton="false"></bean>
+	<bean id="uploadFile" class="com.snp.site.sup.dm.UploadFile" singleton="false"></bean>	
+	<bean id="UploadMusicFile" class="com.snp.site.sup.dm.UploadMusicFile" singleton="false"></bean>	
+
+	<bean id="uploadSiteData" class="com.snp.site.sup.dm.UploadSiteData" singleton="false"></bean>			
+	<bean id="operationRuleInterceptor" class="com.sunrise.sup.core.webwork.interceptor.ControlRuleManagerInterceptor" singleton="false">
+		<property name="checkLogin"><ref bean="loginManager"/></property>		
+	</bean>	
+    <bean id="operationControlAction" class="com.sunrise.sup.core.webwork.action.OperationControlAction" singleton="false" >
+		<property name="operationManager">
+			<ref bean="operationManager"/>
+		</property>		
+	</bean>
+    <bean id="funcDataManager" class="com.sunrise.sup.core.impl.FunctionDataManager" singleton="true">
+		<property name="functionDatas">
+			<map>
+				<entry key="Session">
+					<ref bean="sessionData"/>
+				</entry>
+				<entry key="Cookie">
+					<ref bean="cookieData"/>
+				</entry>
+				<entry key="System">
+					<ref bean="systemData"/>
+				</entry>
+			</map>
+		</property>
+	</bean>
+    <bean id="sessionData" class="com.sunrise.sup.core.impl.SessionData"/>
+    <bean id="cookieData" class="com.sunrise.sup.core.impl.CookieData"/>
+    <bean id="systemData" class="com.sunrise.sup.core.impl.SystemData"/>
+	<bean id="cookieManager" class="com.sunrise.sup.core.impl.HTTPCookieManager"/>
+    <bean id="operationSessionManager" class="com.sunrise.sup.core.impl.WebWorkOperationSessionManager" singleton="false"/>
+    <bean id="OperationExpression" class="com.sunrise.sup.core.impl.Expression" singleton="false"/>
+    <bean id="defaultExpressionWrapper" class="com.sunrise.sup.core.impl.ExpressionWrapperSupport"/>
+    <bean id="dataCRUDOperationWrapper" class="com.sunrise.sup.dm.DataCURDOperationWrapper">
+        <property name="resourceFile"><value>SQLResources.properties</value></property>
+	</bean>
+</beans>
+
+

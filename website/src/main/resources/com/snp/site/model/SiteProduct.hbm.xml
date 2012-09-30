@@ -1,0 +1,205 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+    
+<hibernate-mapping>
+
+
+<class 
+    name="com.snp.site.model.SiteProduct" 
+    table="site_product"
+>
+    <meta attribute="class-description" inherit="false">
+       @hibernate.class
+        table="site_product"
+    </meta>
+
+    <id
+        name="id"
+        type="java.lang.Long"
+        column="id"
+    >
+        <meta attribute="field-description">
+           @hibernate.id
+            generator-class="native"
+            type="java.lang.Long"
+            column="id"
+
+        </meta>
+        <generator class="native" />
+    </id>
+   
+    <property
+        name="sortstr"
+        type="java.lang.String"
+        column="sortstr"
+        length="30"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="sortstr"
+            length="30"
+        </meta>    
+    </property>
+    <property
+        name="detail"
+        type="java.lang.String"
+        column="detail"
+        length="65535"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="detail"
+            length="65535"
+        </meta>    
+    </property>
+  
+    	
+    <property
+        name="detail2"
+        type="java.lang.String"
+        column="detail2"
+        length="65535"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="detail2"
+            length="65535"
+        </meta>    
+    </property>
+    <property
+        name="detail3"
+        type="java.lang.String"
+        column="detail3"
+        length="65535"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="detail3"
+            length="65535"
+        </meta>    
+    </property>
+    <property
+        name="filename"
+        type="java.lang.String"
+        column="filename"
+        length="50"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="filename"
+            length="50"
+        </meta>    
+    </property>
+
+    
+    <property
+        name="filepathvideo"
+        type="java.lang.String"
+        column="filepathvideo"
+        length="100"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="filepathvideo"
+            length="100"
+        </meta>    
+    </property>
+    <property
+        name="filenamevideo"
+        type="java.lang.String"
+        column="filenamevideo"
+        length="50"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="filenamevideo"
+            length="50"
+        </meta>    
+    </property>    
+    <property
+        name="filepath"
+        type="java.lang.String"
+        column="filepath"
+        length="200"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="filepath"
+            length="200"
+        </meta>    
+    </property>
+    <property
+        name="imagealign"
+        type="java.lang.String"
+        column="imagealign"
+        length="20"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="imagealign"
+            length="20"
+        </meta>    
+    </property>
+    <property
+        name="width"
+        type="java.lang.String"
+        column="width"
+        length="20"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="width"
+            length="20"
+        </meta>    
+    </property>
+    <property
+        name="height"
+        type="java.lang.String"
+        column="height"
+        length="20"
+    >
+        <meta attribute="field-description">
+           @hibernate.property
+            column="height"
+            length="20"
+        </meta>    
+    </property>
+    <property
+        name="widthvideo"
+        type="java.lang.String"
+        column="widthvideo"
+        length="20"
+    >
+       <meta attribute="field-description">
+           @hibernate.property
+            column="widthvideo"
+            length="20"
+        </meta>    
+    </property>
+    <property
+        name="heightvideo"
+        type="java.lang.String"
+        column="heightvideo"
+        length="20"
+    >
+       <meta attribute="field-description">
+           @hibernate.property
+            column="heightvideo"
+            length="20"
+        </meta>     
+    </property> 
+    <!-- Associations -->
+  
+    <!-- bi-directional many-to-one association to SiteSpmp4 -->
+    <many-to-one
+        name="siteSpmp4Item"
+        class="com.snp.site.model.SiteSpmp4Item"
+        not-null="true"
+    >
+     <column name="parentid" />
+    </many-to-one>
+
+</class>
+</hibernate-mapping>

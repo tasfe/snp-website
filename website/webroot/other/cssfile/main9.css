@@ -1,0 +1,12 @@
+@import "main0.css";
+a                              {color: #00A51A;text-decoration: none;   }
+a:hover                        {color: #F9D060; text-decoration:underline;}
+
+
+#top-lanmu                   {background:#ffffff;border-bottom:1px solid #A7D11C;  padding:3px 5px 0px 5px;}
+#top-lanmu li                {display: inline; }
+#top-lanmu li a              {font-size: 13px;padding:10px 10px 4px 6px;color:#fff; background:#A7D11C;}
+#top-lanmu a:hover           {color:#fff;background:#00AB1B;text-decoration:none;} 
+
+#snp-left-lanmutitle           {COLOR: #666666;	padding: 7px 0px 2px 8px;font:13px;font-weight: bold;}
+

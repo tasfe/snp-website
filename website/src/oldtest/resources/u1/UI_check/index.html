@@ -1,0 +1,133 @@
+<html>
+<script type="text/javascript" language="javascript">
+		var msgInputIsNotNull = "输入不能为空"
+    var msgIllegalFormat = "输入格式不正确"
+    var msgMonthOutRange = "月份超出范围"
+    var msgStringOutRange = "输入格式超出规定范围"
+    var msgInvalidNumberFormat = "输入的格式必须为数字"
+    var msgNumberTooBig = "输入的数值过大,只限于正负(0-99999)"
+    var msgNumberTooSmall = "输入的格式小于规定范围"
+    var msgInput = "请输入"
+    var msgInputCorrectEmail = "请填写正确的邮件地址(ex.john@sina.com.cn)"
+    var msgTimeRangeError = "时间输入不正确,起始时间应小于终止时间"
+    var msgNumorDecimalTooLong = "小数位过长"
+    var msgNotValidNumber = "输入格式不能为小数"
+    var msgDateOutRange = "日期超出范围"
+    var msgYearOutRange = "年份超出范围"
+    var msgValidMail = "邮件地址中必须含有符号 “@”, “.”"
+    var msgUserNameTooLong = "输入过长"
+    var msgNoSymbol = "输入不允许带有中文,符号或空格"
+    var msgChineseOnly = "只能为中文输入"
+    var msgHourOutRange = "小时数必须小于24"
+    var msgMinOutRange = "分钟数必须小于60"
+    var msgSecondOutRange = "秒数必须小于60"
+    var msgInvalidIpAddress = "数值不能大于255"
+   
+</script>
+<script type="text/javascript" src="Validation.js"></script>
+<script type="text/javascript" src="util.js"></script>
+<head>
+<title>This is a test</title>
+<script language="JavaScript">
+
+		function ev_checkval()
+		{
+			<!--参数对照 addfield(name,cnname,type,isnull,len1,len2,minval,maxval,format)-->
+			//addfield('begginno','整形号码','i',false,6,0,-100000,100000,0);
+			//addfield('longbegginno','长整形号码','l',false,6,0,-100000,100000,0);
+			//addfield('float','单精度浮点','f',false,6,2,-100000,100000,0);
+			//addfield('double','双精度浮点','d',false,6,2,-100000,100000,0);
+			//addfield('mail','Email类型','m',false,50,0,0,0,0);
+			//addfield('datetime','日期时间','dt',false,20,0,0,0,'dd-MM-yy hh:mm:ss aaa');
+			//addfield('ipaddress','IP地址','ip',false,15,0,0,0,0);
+			//addfield('url','URL路径','u',false,100,0,0,0,0);
+			//addfield('upUrl','上传路径','uu',false,50,0,0,0,0);
+			//addfield('name','字符段','c',false,10,0,0,0,0);
+			addfield('chinesename','中文字符段','ch',false,10,0,0,0,0);
+			return checkval(window);
+		}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.STYLE18 {color: #FFFFFF}
+.STYLE31 {color: #000000}
+.STYLE32 {color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; }
+.STYLE35 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.STYLE37 {font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: #FFFFFF; font-size: 14px; }
+-->
+</style>
+</head>
+<body>
+
+	<table width="575" border="0">
+      <tr bgcolor="#000066">
+        <td width="100"><span class="STYLE37">输入名</span></td>
+        <td width="111"><span class="STYLE37">输入类型</span></td>
+        <td width="350"><span class="STYLE37">测试栏</span></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td>整形号码</td>
+        <td class="STYLE35">(i)</td>
+        <td><input name="begginno" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#CCCCCC">
+        <td>长整形号码</td>
+        <td class="STYLE35">(l)</td>
+        <td><input name="longbegginno" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td><span class="STYLE31">单精度浮点</span></td>
+        <td><span class="STYLE32">(f)</span></td>
+        <td><input name="float" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#CCCCCC">
+        <td><span class="STYLE31">双精度浮点</span></td>
+        <td><span class="STYLE32">(d)</span></td>
+        <td><input name="double" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td>Email类型</td>
+        <td class="STYLE35">(m)</td>
+        <td><input name="mail" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#CCCCCC">
+        <td><span class="STYLE31">日期/时间</span></td>
+        <td><span class="STYLE32">(dt)</span></td>
+        <td><input name="datetime" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td>IP地址</td>
+        <td class="STYLE35">(ip)</td>
+        <td><input name="ipaddress" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#CCCCCC">
+        <td><span class="STYLE31">URL路径</span></td>
+        <td><span class="STYLE32">(u)</span></td>
+        <td><input name="url" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td>上传路径</td>
+        <td class="STYLE35">(uu)</td>
+        <td><input name="upUrl" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#CCCCCC">
+        <td><span class="STYLE31">字符段</span></td>
+        <td><span class="STYLE32">(c)</span></td>
+        <td><input name="name" type="text" value="" size="50"></td>
+      </tr>
+      <tr bgcolor="#FFFFFF">
+        <td>中文字符段</td>
+        <td class="STYLE35">(ch)</td>
+        <td><input name="chinesename" type="text" value="" size="50"></td>
+      </tr>
+	  <tr bgcolor="#000066">
+	  <td><span class="STYLE18"></span></td>
+	  <td>&nbsp;</td>
+      <td><input name="button" type="button" onClick="ev_checkval()" value="测试按钮"></td>
+	  </tr>
+</table>
+	
+</body>
+
+</html>

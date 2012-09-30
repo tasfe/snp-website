@@ -1,0 +1,1 @@
+${results["ajax_info"]}
