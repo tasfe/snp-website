@@ -11,6 +11,52 @@ The FileProgress class is not part of SWFUpload.
    package.  They are part of my application.  Without these none
    of the actions SWFUpload makes will show up in my application.
    ********************** */
+
+function swfUploadPreLoad() {
+	var self = this;
+	var loading = function () {
+		//document.getElementById("divSWFUploadUI").style.display = "none";
+		document.getElementById("divLoadingContent").style.display = "";
+
+		var longLoad = function () {
+			document.getElementById("divLoadingContent").style.display = "none";
+			document.getElementById("divLongLoading").style.display = "";
+		};
+		this.customSettings.loadingTimeout = setTimeout(function () {
+				longLoad.call(self)
+			},
+			15 * 1000
+		);
+	};
+	
+	this.customSettings.loadingTimeout = setTimeout(function () {
+			loading.call(self);
+		},
+		1*1000
+	);
+}
+function swfUploadLoaded() {
+	var self = this;
+	clearTimeout(this.customSettings.loadingTimeout);
+	//document.getElementById("divSWFUploadUI").style.visibility = "visible";
+	//document.getElementById("divSWFUploadUI").style.display = "block";
+	document.getElementById("divLoadingContent").style.display = "none";
+	document.getElementById("divLongLoading").style.display = "none";
+	document.getElementById("divAlternateContent").style.display = "none";
+	
+	//document.getElementById("btnBrowse").onclick = function () { self.selectFiles(); };
+	document.getElementById("btnCancel").onclick = function () { self.cancelQueue(); };
+}
+   
+function swfUploadLoadFailed() {
+	clearTimeout(this.customSettings.loadingTimeout);
+	//document.getElementById("divSWFUploadUI").style.display = "none";
+	document.getElementById("divLoadingContent").style.display = "none";
+	document.getElementById("divLongLoading").style.display = "none";
+	document.getElementById("divAlternateContent").style.display = "";
+}
+   
+   
 function fileQueued(file) {
 	try {
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
@@ -80,7 +126,7 @@ function uploadStart(file) {
 		we can do is say we are uploading.
 		 */
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
-		progress.setStatus("正在上传...");
+		progress.setStatus("Uploading...");
 		progress.toggleCancel(true, this);
 	}
 	catch (ex) {}
@@ -94,7 +140,7 @@ function uploadProgress(file, bytesLoaded, bytesTotal) {
 
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
 		progress.setProgress(percent);
-		progress.setStatus("正在上传...");
+		progress.setStatus("Uploading...");
 	} catch (ex) {
 		this.debug(ex);
 	}
@@ -104,7 +150,7 @@ function uploadSuccess(file, serverData) {
 	try {
 		var progress = new FileProgress(file, this.customSettings.progressTarget);
 		progress.setComplete();
-		progress.setStatus("文件上传成功.");
+		progress.setStatus("Complete.");
 		progress.toggleCancel(false);
 
 	} catch (ex) {
@@ -168,7 +214,10 @@ function uploadComplete(file) {
 	if (this.getStats().files_queued === 0) {
 		document.getElementById(this.customSettings.cancelButtonId).disabled = true;
 	}
-	
 }
 
-
+// This event comes from the Queue Plugin
+function queueComplete(numFilesUploaded) {
+	var status = document.getElementById("divStatus");
+	status.innerHTML = numFilesUploaded + " file" + (numFilesUploaded === 1 ? "" : "s") + " uploaded.";
+}
